@@ -1,0 +1,245 @@
+% SixtySecondsCV LaTeX template
+% Copyright © 2020 L. Gueroult <lgueroult-at-hotmail.com>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/LaGuer/SixtySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+% * esben
+%
+% Attributions
+% ------------
+% * sixtysecondscv is based on the fortysecondcv class by Rene Wirnata
+%   (rene.wirnata@pandascience.net), released under the 3-Clause BSD license and available at
+%   https://github.com/PandaScience/FortySecondsCV/
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available at
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	%maincolor=cvgreen,
+	sidecolor=gray!20,
+	sectioncolor=materialblue!50,
+	subsectioncolor=materialindigo,
+	% itemtextcolor=black!80,
+	sidebarwidth=0.35\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	profilepicsize=3.5cm,
+	% profilepicborderwidth=3.5pt,
+	profilepicstyle=profilecircle,
+	profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{sixtysecondscv}
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{multicol}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Néstor Mejía Pérez \\[0.2em]}
+% job title/career
+\cvjobtitle{Desarrollador Web,\\[0.2em] Full Stack }
+
+
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/Mexico.png}
+\write18{wget https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/64/United-States.png}
+
+
+%% optional information
+% profile picture
+\cvprofilepic{nestor.png}
+% logo picture
+%\cvlogopic{pics/logo_txt.png}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{30/10/1997}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Tláhuac, CDMX.}
+% phone number
+\cvphone{+52 5528542245}
+% personal website
+%\cvsite{https://laguer.github.io/sixtysecondscv/}
+% email address
+\cvmail{programatonpro@gmail.com}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/shiny/}}
+    \profilesection{Objetivo.}
+       Desarrollar aplicaciones web utilizando herramientas adecuadas y eficientes.
+    \profilesection{Acerca de mi}
+	   Enfocado en el desarrollo web, móbil y en la nube.
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Redes Sociales}
+		\begin{icontable}{2.5em}{1em}
+		
+			\social{\faGithub}
+				{https://github.com/HeavyMachineGun}
+				{Github}
+		\end{icontable}
+
+	\profilesection{Idiomas}
+		
+     \pointskill{\flag{Mexico.png}}{Español}{5}
+	  \pointskill{\flag{United-States.png}}{Inglés}{3}
+
+  
+	
+	\profilesection{Habilidades}
+	\barskill{\faConnectdevelop}{Creatividad}{100}
+	\barskill{\faCubes}{Pensamiento crítico}{90}
+	\barskill{\faGroup}{Trabajo en equipo}{100}
+	\barskill{\faPieChart}{Comunicación oral y escrita}{90}
+	\barskill{\faGraduationCap}{Autodidacta}{100}
+	
+}
+    
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Experiencia laboral.}
+\begin{cvtable}[3]
+    \cvitem{2020}{Proyecto personal}{Personal}{
+	    Desarrollo de API REST utilizando .Net Core / consumo de API REST en aplicación móvil hibrida (cordova)/ reactjs SPA.
+	    \\[0.2em]
+	\textbf{Tecnologías utilizadas:}
+	\begin{multicols}{2}
+	    \begin{itemize} 
+	        \setlength\itemsep{-.3em}
+	        \item Net Core. API REST
+	        \item SQL Server 2018.
+	        \item ES6.
+	        \item Nodejs.\columnbreak
+	        \item Firebase Cloud Messaging.
+	        \item Git / Git Hub 
+	        \item Reactjs
+	        \item ES6(Promises,clousures)
+	    \end{itemize}
+    \end{multicols}
+	}
+	\cvitem{2019--2020}{Desarrollador de aplicaciones móviles hibridas para plataforma escolar.}{\'Agtica}{
+	    Desarrollo de aplicación móvil. Envió de notificaciones con Firebase y reportes personalizados, desde aplicación de escritorio, a usuarios, como objetivo principal.
+	    \\[0.2em]
+	\textbf{Tecnologías utilizadas:}
+	\begin{multicols}{2}
+	    \begin{itemize}
+	        \setlength\itemsep{-.3em}
+	        \item Firebase Cloud Messaging.
+	        \item Firebase functions REST. 
+	        \item ES6.
+	        \item Nodejs.\columnbreak
+	        \item VueJs
+	        \item Git / Git Hub 
+	        \item Cordova.
+	        \item GCP Api's.
+	    \end{itemize}
+    \end{multicols}
+	}
+	\cvitem{2019}{Desarrollador web .NET}{SITE}{
+	Desarrollo de plataforma web utilizando ASP.NET MVC para administración de la biblioteca del Instituto tecnológico de Tláhuac como parte del servicio social.\\[0.2em]
+	\textbf{Tecnologías utilizadas:}
+	\begin{multicols}{2}
+	    \begin{itemize}
+	        \setlength\itemsep{-.3em}
+	        \item ASP.NET MVC
+	        \item C\#. 
+	        \item jQuery. \columnbreak
+	        \item Entity Framework.
+	        \item SQL Server 2016.
+	        \item Team Fundation Server. 
+	        \item Bootstrap 3. 
+	    \end{itemize}
+    \end{multicols}
+	}
+	\cvitem{2016 -- 2020}{Desarrollador web, móvil, escritorio}{Ágtica Edusoft}{Mantenimiento y actualización de plataforma escolar.\\[0.2em]
+	\textbf{Tecnologías utilizadas:}
+	\begin{multicols}{2}
+	    \begin{itemize}
+	        \setlength\itemsep{-.3em}
+	        \item Crystal Reports
+	        \item C\#, WPF. 
+	        \item Access. \columnbreak
+	        \item Visual Basic 6.
+	    \end{itemize}
+    \end{multicols}
+	}
+	
+\end{cvtable}
+
+\cvsection{Competencias y habilidades}
+\begin{cvtable}[1.5]
+	\cvitem{}{}{}{
+	    Adaptación al entorno de trabajo, determinación para
+resolver problemas, autodidacta, apasionado por el aprendizaje y uso de nuevas tecnologías.
+	}
+	
+\end{cvtable}
+
+\cvsection{Preparación académica.}
+\begin{cvtable}[1.5]
+	\cvitem{2015 -- 2020}{Ingeniería en Sistemas Computacionales}{TECNM.}{}
+	\cvitem{2012 -- 2015}{Carrera Técnica en Soporte y Mantenimiento de Equipos de Cómputo.}{CECyTEO}{}
+	
+\end{cvtable}
+
+
+\end{document}
